@@ -31,7 +31,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - id: git-author
-        name: Git config
+        name: Configure git user from GitHub token
         uses: MarcoIeni/git-config@v0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
