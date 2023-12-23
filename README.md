@@ -27,6 +27,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit changes
         run: |
+          echo "${{ steps.commit-author.outputs.email }}"
+          echo "${{ steps.commit-author.outputs.name }}"
           touch new-file
           git add .
           git commit -m "My commit message"
