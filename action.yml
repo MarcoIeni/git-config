@@ -4,6 +4,13 @@ description: "Configure the git user corresponding to the `GITHUB_TOKEN` environ
 branding:
   icon: "zap"
   color: "yellow"
+outputs:
+  name:
+    description: "Git author name"
+    value: ${{ steps.git-author.outputs.name }}
+  email:
+    description: "Git author email"
+    value: ${{ steps.git-author.outputs.email }}
 runs:
   using: "composite"
   steps:
