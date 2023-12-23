@@ -15,6 +15,14 @@ Here's an example of how to use the action in a workflow to configure the git us
 After you configure the user, you can make changes and push them.
 
 ```yaml
+name: Create new file
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch: # Allow manual triggers
+
 jobs:
   my-job:
     name: My job
