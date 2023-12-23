@@ -30,14 +30,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Git config
+      - id: git-author
+        name: Git config
         uses: MarcoIeni/git-config@v0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit changes
         run: |
-          echo "${{ steps.commit-author.outputs.email }}"
-          echo "${{ steps.commit-author.outputs.name }}"
+          echo "${{ steps.git-author.outputs.email }}"
+          echo "${{ steps.git-author.outputs.name }}"
           touch new-file
           git add .
           git commit -m "My commit message"
