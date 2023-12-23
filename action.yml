@@ -1,6 +1,6 @@
 name: "git-config"
 author: "Marco Ieni"
-description: "Configure the git user from the `GITHUB_TOKEN` environment variable."
+description: "Configure the git user corresponding to the `GITHUB_TOKEN` environment variable."
 branding:
   icon: "zap"
   color: "yellow"
