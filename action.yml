@@ -1,4 +1,4 @@
-name: "git-config"
+name: "git-config-from-token"
 author: "Marco Ieni"
 description: "Configure the git user corresponding to the `GITHUB_TOKEN` environment variable."
 branding:
