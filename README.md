@@ -3,7 +3,8 @@
 GitHub action to configure the git user corresponding to the `GITHUB_TOKEN` environment variable.
 
 The action configures the git user name and email:
-```sh
+
+```
 git config --global user.name <name>
 git config --global user.email <email>
 ```
