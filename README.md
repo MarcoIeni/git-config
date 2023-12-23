@@ -41,7 +41,7 @@ jobs:
           echo "${{ steps.git-author.outputs.name }}"
           touch new-file
           git add .
-          git commit -m "My commit message"
+          git commit -m "Create new file"
           git push
 ```
 
