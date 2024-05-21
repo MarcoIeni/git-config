@@ -24,6 +24,8 @@ runs:
         VIEWER_LOGIN=$(jq --raw-output '.login' <<< "${VIEWER_JSON}")
         VIEWER_DATABASE_ID=$(jq --raw-output '.databaseId' <<< "${VIEWER_JSON}")
 
+        # Set the variable USER_NAME to the value of VIEWER_NAME if VIEWER_NAME is set and not null.
+        # Otherwise, set USER_NAME to the value of VIEWER_LOGIN.
         USER_NAME="${VIEWER_NAME:-${VIEWER_LOGIN}}"
         USER_EMAIL="${VIEWER_DATABASE_ID}+${VIEWER_LOGIN}@users.noreply.github.com"
 
