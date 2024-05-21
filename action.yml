@@ -18,6 +18,16 @@ runs:
       name: Determine Git user info from GitHub token
       shell: bash
       run: |
+        if [ -z "${GITHUB_TOKEN+x}" ]; then
+          echo "Error: environment variable GITHUB_TOKEN is undefined"
+          exit 1
+        fi
+
+        if [ -z "$GITHUB_TOKEN" ]; then
+          echo "Error: environment variable GITHUB_TOKEN is empty"
+          exit 1
+        fi
+
         # The environment variable GITHUB_TOKEN is read by the `gh` cli
         VIEWER_JSON=$(gh api graphql -f query='query { viewer { name login databaseId }}' --jq '.data.viewer')
         VIEWER_NAME=$(jq --raw-output '.name | values' <<< "${VIEWER_JSON}")
